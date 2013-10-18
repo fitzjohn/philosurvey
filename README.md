@@ -1,4 +1,4 @@
-philosurvey
+PhiloSurvey
 ===========
 
 Open standards for survey research.
