@@ -3,8 +3,11 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Philosurvey's documentation!
+Welcome to PhiloSurvey's documentation!
 =======================================
+
+The PhiloSurvey Project can be located at: 
+.. _PhiloSurvey: http://philosurvey.org/
 
 Contents:
 
