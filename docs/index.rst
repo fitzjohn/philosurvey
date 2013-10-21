@@ -6,9 +6,7 @@
 Welcome to PhiloSurvey's documentation!
 =======================================
 
-The PhiloSurvey Project can be located at:
-
-.. _PhiloSurvey: http://philosurvey.org/
+The PhiloSurvey Project can be located at: http://philosurvey.org/
 
 Contents:
 
