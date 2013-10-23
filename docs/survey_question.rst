@@ -1,6 +1,9 @@
 ****************
  SURVEY QUESTION
 ****************
+The Survey Question resource is used to manage questions in the context of setting up a survey. This is separate from but obviously related to the Response Question resource, which provides information about questions presented to a particular response. These may differ for many reasons, including skip logic.
+
+Below are the details for performing all of the simple CRUD (Create, Read/View, Update and Delete/Disable) operations.
 
 CREATE
 ======
@@ -86,7 +89,7 @@ The payload of the response will be valid JSON using the following format.
       }
    }
 
-View
+Read/View
 ====
 
 Request
@@ -104,7 +107,7 @@ Request
 Response
 --------
 
-Delete
+Delete/Disable
 ======
 
 Request
