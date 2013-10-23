@@ -1,10 +1,7 @@
-.. Philosurvey documentation master file, created by
-   sphinx-quickstart on Mon Oct 21 16:18:48 2013.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+PhiloSurvey Documentation
+==========================
 
-Welcome to PhiloSurvey's documentation!
-=======================================
+.. warning:: This documentation is in the very early stages of development and should not be used for any purpose.
 
 The PhiloSurvey Project can be located at: http://philosurvey.org/
 
@@ -12,6 +9,8 @@ Contents:
 
 .. toctree::
    :maxdepth: 2
+
+   survey_question.rst
 
 
 

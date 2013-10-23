@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>SURVEY QUESTION &mdash; Philosurvey 0.0.0-alpha documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0.0-alpha',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Philosurvey 0.0.0-alpha documentation" href="index.html" />
+    <link rel="prev" title="PhiloSurvey Documentation" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="index.html" title="PhiloSurvey Documentation"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Philosurvey 0.0.0-alpha documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="survey-question">
+<h1>SURVEY QUESTION<a class="headerlink" href="#survey-question" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="create">
+<h2>CREATE<a class="headerlink" href="#create" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="request">
+<h3>Request<a class="headerlink" href="#request" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="method-post">
+<h4>Method: POST<a class="headerlink" href="#method-post" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="url">
+<h5>URL<a class="headerlink" href="#url" title="Permalink to this headline">¶</a></h5>
+<p>/api/v1/survey_questions</p>
+</div>
+<div class="section" id="payload">
+<h5>Payload<a class="headerlink" href="#payload" title="Permalink to this headline">¶</a></h5>
+<p>The payload of the request must be submitted as valid JSON using the following format.</p>
+<div class="highlight-javascript"><pre>{
+    “value”: “[quest string]”,
+    “class_id”: “[quest class id 1],[quest class id 2]”,
+    “type”: {“kind”:”[Standard|Custom]”,”id”:“[quest type id]”},
+    “survey_order”: “[quest survey order number]”,
+    “group_id”: “[quest group id]”,
+    “tags” : {
+       “[key1]”: “”,
+       “[key2]”: “[value2]”,
+       “[key3]”: “[value3,value4,value5]”
+ }</pre>
+</div>
+</div>
+</div>
+<div class="section" id="method-get">
+<h4>Method: GET<a class="headerlink" href="#method-get" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id1">
+<h5>URL<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h5>
+<p>/api/v1/survey_questions?method=post&amp;...</p>
+</div>
+<div class="section" id="id2">
+<h5>Payload<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h5>
+<p>There is no payload beyond the query string itself.</p>
+</div>
+</div>
+</div>
+<div class="section" id="response">
+<h3>Response<a class="headerlink" href="#response" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="status-200">
+<h4>Status: 200<a class="headerlink" href="#status-200" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id3">
+<h5>Payload<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h5>
+<p>The payload of the response will be valid JSON using the following format.</p>
+<div class="highlight-javascript"><pre>{
+   "meta": {
+   },
+   “survey_question”: {
+      “value”: “[quest string]”,                    //Note: May not want to make this externally visible.
+      “hash”: “[quest hash]”,
+      “class_id”: “[quest class id 1],[quest class id 2]”,
+      “type”: {“kind”:”[Standard|Custom]”,”id”:“[quest type id]”},
+      “survey_order”: “[quest survey order number]”,        //Note: Only has meaning within a survey.
+      “response_order”: “[quest response order number]”,    //Note: Only has meaning within a survey response.
+      “group_id”: “[quest group id]”,
+      “tags” : {
+         “[key1]”: “”,
+         “[key2]”: “[value2]”,
+         “[key3]”: “[value3,value4,value5]”
+   },
+   "notifications":{
+   }
+}</pre>
+</div>
+</div>
+</div>
+<div class="section" id="status-500">
+<h4>Status: 500<a class="headerlink" href="#status-500" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id4">
+<h5>Payload<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h5>
+<p>The payload of the response will be valid JSON using the following format.</p>
+<div class="highlight-javascript"><pre>{
+   "meta": {
+   },
+   “survey_question”: {
+   },
+   "notifications":{
+   }
+}</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="view">
+<h2>View<a class="headerlink" href="#view" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h3>Request<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id6">
+<h3>Response<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="update">
+<h2>Update<a class="headerlink" href="#update" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h3>Request<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id8">
+<h3>Response<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="delete">
+<h2>Delete<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id9">
+<h3>Request<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id10">
+<h3>Response<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">SURVEY QUESTION</a><ul>
+<li><a class="reference internal" href="#create">CREATE</a><ul>
+<li><a class="reference internal" href="#request">Request</a><ul>
+<li><a class="reference internal" href="#method-post">Method: POST</a><ul>
+<li><a class="reference internal" href="#url">URL</a></li>
+<li><a class="reference internal" href="#payload">Payload</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#method-get">Method: GET</a><ul>
+<li><a class="reference internal" href="#id1">URL</a></li>
+<li><a class="reference internal" href="#id2">Payload</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#response">Response</a><ul>
+<li><a class="reference internal" href="#status-200">Status: 200</a><ul>
+<li><a class="reference internal" href="#id3">Payload</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#status-500">Status: 500</a><ul>
+<li><a class="reference internal" href="#id4">Payload</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#view">View</a><ul>
+<li><a class="reference internal" href="#id5">Request</a></li>
+<li><a class="reference internal" href="#id6">Response</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#update">Update</a><ul>
+<li><a class="reference internal" href="#id7">Request</a></li>
+<li><a class="reference internal" href="#id8">Response</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#delete">Delete</a><ul>
+<li><a class="reference internal" href="#id9">Request</a></li>
+<li><a class="reference internal" href="#id10">Response</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">PhiloSurvey Documentation</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/survey_question.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="index.html" title="PhiloSurvey Documentation"
+             >previous</a> |</li>
+        <li><a href="index.html">Philosurvey 0.0.0-alpha documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, John B. Fitzpatrick, ArcherDrive Consulting.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b3.
+    </div>
+  </body>
+</html>
