@@ -92,8 +92,8 @@ The payload of the response will be valid JSON using the following format.
       }
    }
 
-Read/View
-====
+READ/VIEW
+=========
 
 Request
 -------
@@ -101,7 +101,7 @@ Request
 Response
 --------
 
-Update
+UPDATE
 ======
 
 Request
@@ -110,8 +110,8 @@ Request
 Response
 --------
 
-Delete/Disable
-======
+DELETE/DISABLE
+==============
 
 Request
 -------
